@@ -7,9 +7,9 @@ namespace Supplier.Domain.Entities
 {
     public class Person
     {
-        private List<PersonContact> _contact;
+        private List<PersonContact> _contact = new List<PersonContact>();
         public int Id { get; private set; }
-        protected string Name { get; private set; }
+        public string Name { get; private set; }
         public string Document { get; private set; }
         public PersonType Type { get; private set; }
         public PersonStatus Status { get; private set; }

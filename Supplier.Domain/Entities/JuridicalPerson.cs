@@ -6,11 +6,11 @@ namespace Supplier.Domain.Entities
     public class JuridicalPerson : Person
     {
         public virtual CompanyType CompanyType { get; private set; }
-        public virtual int CompanyTypeId { get; set; }
+        public virtual int CompanyTypeId { get; private set; }
         public string TradeName { get; private set; }
         public DateTime DateOfIncorporation { get; private set; }
         public virtual CompanySize Size { get; private set; }
-        public virtual int CompanySizeId { get; set; }
+        public virtual int CompanySizeId { get; private set; }
         public string WebSite { get; private set; }
         public int ShareQuantity { get; private set; }
         public decimal ValueShare { get; private set; }
