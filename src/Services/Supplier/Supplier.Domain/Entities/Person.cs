@@ -10,6 +10,8 @@ namespace Supplier.Domain.Entities
         private List<PersonContact> _contact = new List<PersonContact>();
         public int Id { get; private set; }
         public string Name { get; private set; }
+        public DateTime LastUpdateDate { get; private set; }
+        public bool IsNational { get; private set; }
         public string Document { get; private set; }
         public PersonType Type { get; private set; }
         public PersonStatus Status { get; private set; }

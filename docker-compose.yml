@@ -6,3 +6,10 @@ services:
     build:
       context: .
       dockerfile: Supplier.Api/Dockerfile
+
+  supplier.app:
+    image: ${DOCKER_REGISTRY-}supplierapp
+    build:
+      context: .
+      dockerfile: src/BFF/Site/Supplier.App/Dockerfile
+

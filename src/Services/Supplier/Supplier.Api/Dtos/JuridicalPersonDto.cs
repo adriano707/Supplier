@@ -7,6 +7,7 @@ namespace Supplier.Api.Dtos
     {
         public CompanyTypeDto CompanyType { get; set; }
         public string TradeName { get; set; }
+        public string FantasyName { get;  set; }
         public DateTime DateOfIncorporation { get; set; }
         public CompanySizeDto CompanySize { get; set; }
         public string WebSite { get; set; }

@@ -8,6 +8,7 @@ namespace Supplier.Domain.Entities
         public virtual CompanyType CompanyType { get; private set; }
         public virtual int CompanyTypeId { get; private set; }
         public string TradeName { get; private set; }
+        public string FantasyName { get; private set; }
         public DateTime DateOfIncorporation { get; private set; }
         public virtual CompanySize Size { get; private set; }
         public virtual int CompanySizeId { get; private set; }
