@@ -29,12 +29,10 @@ import { JuridicalPersonComponent } from './juridical-person/juridical-person.co
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
+      { path: '', component: HomeComponent, pathMatch: 'full' },      
       { path: 'supplier', component: SuppliersComponent },
-      { path: 'natural-person', component: NaturalPersonComponent },
-      { path: 'juridical-person', component: JuridicalPersonComponent },
+      { path: 'natural-person/:id', component: NaturalPersonComponent },
+      { path: 'juridical-person/:id', component: JuridicalPersonComponent },
     ])
   ],
   providers: [],

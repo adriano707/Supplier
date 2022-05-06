@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Supplier.Data.Contexts;
 
 namespace Supplier.Data.Migrations
 {
     [DbContext(typeof(SupplierDbContext))]
-    partial class SupplierDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220506181142_AddedIsNationalFieldInPersonEntity")]
+    partial class AddedIsNationalFieldInPersonEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

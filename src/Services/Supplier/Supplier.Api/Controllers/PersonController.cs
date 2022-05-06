@@ -26,7 +26,14 @@ namespace Supplier.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAsyncAllPersons()
         {
-            var person = _context.Person.ToList();
+            var person = _context.Person.Select(p => new PersonSearchResultDto() 
+            {
+                Id = p.Id,
+                Name = p.Name,
+                Document = p.Document,
+                IsNational = p.IsNational,
+                Type = p.Type
+            }).ToList();
             return Ok(person);
         }
 
@@ -39,11 +46,11 @@ namespace Supplier.Api.Controllers
         [Route("juridical-persons")]
         public async Task<IActionResult> AddAsyncJuridicalPerson([FromBody] JuridicalPersonDto juridicalPersonDto)
         {
-            var companyType = _context.CompanyType.FirstOrDefault(c => c.Id == juridicalPersonDto.CompanyType.Id);
+            var companyType = _context.CompanyType.FirstOrDefault(c => c.Id == juridicalPersonDto.CompanyType);
 
             if (companyType is null) return NotFound();
 
-            var companySize = _context.CompanySize.FirstOrDefault(c => c.Id == juridicalPersonDto.CompanySize.Id);
+            var companySize = _context.CompanySize.FirstOrDefault(c => c.Id == juridicalPersonDto.CompanySize);
 
             if (companySize is null) return NotFound();
 
@@ -74,16 +81,8 @@ namespace Supplier.Api.Controllers
             JuridicalPersonDto dto = new JuridicalPersonDto()
             {
                 Name = juridicalPerson.Name,
-                CompanySize = juridicalPerson.Size is null ? null : new CompanySizeDto()
-                {
-                    Id = juridicalPerson.Size.Id,
-                    Name = juridicalPerson.Size.Name
-                },
-                CompanyType = juridicalPerson.CompanyType is null ? null : new CompanyTypeDto()
-                {
-                    Id = juridicalPerson.CompanyType.Id,
-                    Name = juridicalPerson.CompanyType.Name
-                },
+                CompanySize = juridicalPerson.Size.Id,
+                CompanyType = juridicalPerson.CompanyType.Id,
                 Id = juridicalPerson.Id,
                 Contacts = juridicalPerson.Contacts.Select(j => new PersonContactDto()
                 {
@@ -115,7 +114,7 @@ namespace Supplier.Api.Controllers
         [Route("natural-persons")]
         public async Task<IActionResult> AddAsyncNaturalPerson([FromBody] NaturalPersonDto naturalPersonDto)
         {
-            var companyType = _context.CompanyType.FirstOrDefault(c => c.Id == naturalPersonDto.CompanyType.Id);
+            var companyType = _context.CompanyType.FirstOrDefault(c => c.Id == naturalPersonDto.CompanyType);
 
             if (companyType is null) return NotFound();
 
@@ -134,7 +133,7 @@ namespace Supplier.Api.Controllers
         }
 
         [HttpGet]
-        [Route("natural-person/{id:int}")]
+        [Route("natural-persons/{id:int}")]
         public async Task<IActionResult> GetAsyncNaturalPerson([FromRoute] int id)
         {
             var naturalPerson = _context.Person.OfType<NaturalPerson>().FirstOrDefault(j => j.Id == id);
@@ -148,11 +147,7 @@ namespace Supplier.Api.Controllers
                 BirthDate = naturalPerson.BirthDate,
                 Gender = naturalPerson.Gender,
                 Nationality = naturalPerson.Nationality,
-                CompanyType = naturalPerson.CompanyType is null ? null : new CompanyTypeDto()
-                {
-                    Id = naturalPerson.CompanyType.Id,
-                    Name = naturalPerson.CompanyType.Name
-                },
+                CompanyType = naturalPerson.CompanyType.Id,
                 Contacts = naturalPerson.Contacts.Select(j => new PersonContactDto()
                 {
                     Contact = j.Contact,

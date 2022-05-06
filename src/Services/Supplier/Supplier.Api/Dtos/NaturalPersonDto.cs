@@ -8,7 +8,7 @@ namespace Supplier.Api.Dtos
     {
         public MaritalStatus MaritalStatus { get; set; }
         public string Profession { get; set; }
-        public virtual CompanyTypeDto CompanyType { get; set; }
+        public virtual int CompanyType { get; set; }
         public virtual int CompanyTypeId { get; set; }
         public DateTime BirthDate { get; set; }
         public Gender Gender { get; set; }

@@ -40,9 +40,11 @@ namespace Supplier.Api
 
             app.UseHttpsRedirection();
 
+            app.UseCors(a => a.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
+
             app.UseRouting();
 
-            //app.UseAuthorization();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
