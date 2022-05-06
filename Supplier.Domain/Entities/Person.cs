@@ -15,6 +15,11 @@ namespace Supplier.Domain.Entities
         public PersonStatus Status { get; private set; }
         public IReadOnlyCollection<PersonContact> Contacts => _contact;
 
+        public Person()
+        {
+
+        }
+
         public Person(string name, string document, PersonType type)
         {
             Name = name ?? throw new ArgumentNullException(nameof(name));

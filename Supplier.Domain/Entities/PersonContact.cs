@@ -11,6 +11,11 @@ namespace Supplier.Domain.Entities
         public virtual Person Person { get; private set; }
         public virtual int PersonId { get; private set; }
 
+        public PersonContact()
+        {
+
+        }
+
         public PersonContact(string contact, ContactType type)
         {
             Contact = contact ?? throw new ArgumentNullException(nameof(contact));

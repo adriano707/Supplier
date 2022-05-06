@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Supplier.Data;
 
 namespace Supplier.Api
 {
@@ -19,7 +20,7 @@ namespace Supplier.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddDatabase();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -41,7 +42,7 @@ namespace Supplier.Api
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            //app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

@@ -16,6 +16,11 @@ namespace Supplier.Domain.Entities
         public decimal ValueShare { get; private set; }
         public decimal SocialCapital { get; private set; }
 
+        public JuridicalPerson()
+        {
+
+        }
+
         public JuridicalPerson(string name, string document, CompanyType companyType, string tradeName, DateTime dateOfCorporation, CompanySize size, string webSite, int shareQuantity, decimal valueShare, decimal socialCapital)
             : base(name, document, PersonType.JuridicalPerson)
         {

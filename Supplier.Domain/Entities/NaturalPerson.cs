@@ -13,6 +13,11 @@ namespace Supplier.Domain.Entities
         public Gender Gender { get; private set; }
         public string Nationality { get; private set; }
 
+        public NaturalPerson()
+        {
+
+        }
+
         public NaturalPerson(string name, string document, MaritalStatus maritalStatus, string profession, CompanyType companyType, DateTime birthDate, Gender gender, string nacionality) 
             : base(name, document, PersonType.NaturalPerson)
         {

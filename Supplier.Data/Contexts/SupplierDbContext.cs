@@ -6,12 +6,15 @@ namespace Supplier.Data.Contexts
 {
     public class SupplierDbContext : DbContext
     {
-        public DbSet<Person> Person { get; set; }
-        public DbSet<NaturalPerson> NaturalPerson { get; set; }
-        public DbSet<JuridicalPerson> JuridicalPerson { get; set; }
+        public DbSet<Person> Person { get; set; }       
         public DbSet<PersonContact> PersonContact { get; set; }
         public DbSet<CompanyType> CompanyType { get; set; }
         public DbSet<CompanySize> CompanySize { get; set; }
+
+        public SupplierDbContext()
+        {
+
+        }
 
         public SupplierDbContext(DbContextOptions<SupplierDbContext> options)
             : base(options)

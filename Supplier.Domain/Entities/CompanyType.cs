@@ -7,6 +7,10 @@ namespace Supplier.Domain.Entities
         public int Id { get; private set; }
         public string Name { get; private set; }
 
+        public CompanyType()
+        {
+
+        }
         public CompanyType(string name)
         {
             Name = name ?? throw new ArgumentNullException(nameof(name));
