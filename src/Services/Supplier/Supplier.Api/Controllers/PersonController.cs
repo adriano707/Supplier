@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Supplier.Api.Dtos;
 using Supplier.Data.Contexts;
 using Supplier.Domain.Entities;
@@ -136,7 +137,9 @@ namespace Supplier.Api.Controllers
         [Route("natural-persons/{id:int}")]
         public async Task<IActionResult> GetAsyncNaturalPerson([FromRoute] int id)
         {
-            var naturalPerson = _context.Person.OfType<NaturalPerson>().FirstOrDefault(j => j.Id == id);
+            var naturalPerson = _context.Person.OfType<NaturalPerson>()
+                .Include(j => j.CompanyType)
+                .FirstOrDefault(j => j.Id == id);
 
             if (naturalPerson is null) return NotFound("Pessoa Física não encontrada");
 

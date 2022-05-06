@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -11,11 +11,11 @@ export class JuridicalPersonComponent implements OnInit {
   public data: IJuridicalPerson;
   id: string;
 
-  constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string, private route: ActivatedRoute) { }
+  constructor(private http: HttpClient, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
-    this.http.get<IJuridicalPerson>(this.baseUrl + 'juridical-persons/' + this.id).subscribe(result => {
+    this.http.get<IJuridicalPerson>('https://localhost:5002/persons/juridical-persons/' + this.id).subscribe(result => {
       this.data = result;
     }, error => console.error(error));
   }
@@ -23,16 +23,16 @@ export class JuridicalPersonComponent implements OnInit {
 }
 
 interface IJuridicalPerson {
-  Type: number;
-  IsNational: boolean;
-  LastUpdateDate: Date;
-  Status: number;
-  Document: string;
-  TradeName: string;
-  FantasyName: string;
-  Size: number;
-  WebSite: string;
-  ShareQuantity: number;
-  ValueShare: number;
-  SocialCapital: number;
+  type: number;
+  isNational: boolean;
+  lastUpdateDate: Date;
+  status: number;
+  document: string;
+  tradeName: string;
+  fantasyName: string;
+  size: number;
+  webSite: string;
+  shareQuantity: number;
+  valueShare: number;
+  socialCapital: number;
 }

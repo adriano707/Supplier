@@ -9,22 +9,22 @@
 <div class="row">
   <div class="control-group col-md-3">
     <label>Tipo de Pessoa: </label>
-    <input type="text" name="tipo-pessoa" [(ngModel)]="data.Type" class="form-control" />
+    <input type="text" name="tipo-pessoa" [(ngModel)]="data.type" class="form-control" />
   </div>
   <div class="control-group col-md-3">
     <label>Nacinal: </label>
-    <select [(ngModel)]="IsNational" class="form-control">
+    <select [(ngModel)]="isNational" class="form-control">
       <option value="sim">Sim</option>
       <option value="nao">Não</option>
     </select>
   </div>
   <div class="control-group col-md-3">
     <label>Dt. Últ. Atualização: </label>
-    <input type="date" name="date" [(ngModel)]="data.LastUpdateDate" class="form-control" />
+    <input type="date" name="date" [(ngModel)]="data.lastUpdateDate" class="form-control" />
   </div>
   <div class="control-group col-md-3">
     <label>Situação: </label>
-    <select class="form-control" [(ngModel)]="data.Status">
+    <select class="form-control" [(ngModel)]="data.status">
       <option value="elaboracao">Em Elaboração</option>
       <option value="elaboracao">Ativado</option>
       <option value="elaboracao">Desativado</option>
@@ -36,17 +36,17 @@
   <div class="row">
     <div class="from-group col-md-3">
       <label>CPF: </label>
-      <input type="text" name="cpf" value="" [(ngModel)]="data.Document" class="form-control" />
+      <input type="text" name="cpf" value="" [(ngModel)]="data.document" class="form-control" />
     </div>
     <div class="from-group col-md-3">
       <label>Nome: </label>
-      <input type="text" name="nome" value="" [(ngModel)]="data.Name" class="form-control" />
+      <input type="text" name="nome" value="" [(ngModel)]="data.name" class="form-control" />
     </div>    
   </div>
   <div>
     <div class="from-group">
       <label>Estado Civíl</label>
-      <select class="form-control" [(ngModel)]="data.MaritalStatus">
+      <select class="form-control" [(ngModel)]="data.maritalStatus">
         <option value="casado">Casado(a)</option>
         <option value="solteiro">Solteiro(a)</option>
         <option value="divorciado">Divorciado(a)</option>
@@ -55,7 +55,7 @@
     </div>
     <div class="from-group">
       <label>Profissão: </label>
-      <input type="text" name="profissao" value="" [(ngModel)]="data.Profession" class="form-control" />
+      <input type="text" name="profissao" value="" [(ngModel)]="data.profession" class="form-control" />
     </div>
     <div class="from-group">
       <label>Fone 1</label>
@@ -73,15 +73,15 @@
   <div>
     <div class="from-group">
       <label>Tipo de Empresa: </label>
-      <input type="text" name="cpf" value="" [(ngModel)]="data.CompanyType" class="form-control" />
+      <input type="text" name="cpf" value="" [(ngModel)]="data.companyType" class="form-control" />
     </div>
     <div class="from-group">
       <label>Nacimento: </label>
-      <input type="text" name="nacimento" value="" [(ngModel)]="data.BirthDate" class="form-control" />
+      <input type="text" name="nacimento" value="" [(ngModel)]="data.birthDate" class="form-control" />
     </div>
     <div class="from-group">
       <label>Genero: </label>
-      <select class="form-control" [ngModel]="data.Gender">
+      <select class="form-control" [ngModel]="data.gender">
         <option value="masculino">Masculino</option>
         <option value="Feminino">Feminino</option>
         <option value="outros">Outros</option>
@@ -89,7 +89,7 @@
     </div>
     <div class="from-group">
       <label>Nacionalidade: </label>
-      <input type="text" name="nacionalidade" value="" [(ngModel)]="data.Nationality" class="form-control" />
+      <input type="text" name="nacionalidade" value="" [(ngModel)]="data.nationality" class="form-control" />
     </div>
   </div>
 </fieldset>

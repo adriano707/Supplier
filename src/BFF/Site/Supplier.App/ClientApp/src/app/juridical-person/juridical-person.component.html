@@ -9,22 +9,22 @@
 <div class="row">
   <div class="control-group col-md-3">
     <label>Tipo de Pessoa: </label>
-    <input type="text" name="tipo-pessoa" [(ngModel)]="data.Type" class="form-control" />
+    <input type="text" name="tipo-pessoa" [(ngModel)]="data.type" class="form-control" />
   </div>
   <div class="control-group col-md-3">
     <label>Nacinal: </label>
-    <select [(ngModel)]="IsNational" class="form-control">
+    <select [(ngModel)]="isNational" class="form-control">
       <option value="sim">Sim</option>
       <option value="nao">Não</option>
     </select>
   </div>
   <div class="control-group col-md-3">
     <label>Dt. Últ. Atualização: </label>
-    <input type="date" name="date" [(ngModel)]="data.LastUpdateDate" class="form-control" />
+    <input type="date" name="date" [(ngModel)]="data.lastUpdateDate" class="form-control" />
   </div>
   <div class="control-group col-md-3">
     <label>Situação: </label>
-    <select class="form-control" [(ngModel)]="data.Status">
+    <select class="form-control" [(ngModel)]="data.status">
       <option value="elaboracao">Em Elaboração</option>
       <option value="elaboracao">Ativado</option>
       <option value="elaboracao">Desativado</option>
@@ -36,25 +36,25 @@
   <div>
     <div class="from-group">
       <label>CNPJ: </label>
-      <input type="text" name="cnpj" value="" [(ngModel)]="data.Document" class="form-control" />
+      <input type="text" name="cnpj" value="" [(ngModel)]="data.document" class="form-control" />
     </div>
     <div class="from-group">
       <label>Razão Social: </label>
-      <input type="text" name="razao-social" value="" [(ngModel)]="data.TradeName" class="form-control" />
+      <input type="text" name="razao-social" value="" [(ngModel)]="data.tradeName" class="form-control" />
     </div>
     <div class="from-group">
       <label>Nome Fantasia: </label>
-      <input type="text" name="nome-fantasia" value="" [(ngModel)]="data.FantasyName" class="form-control" />
+      <input type="text" name="nome-fantasia" value="" [(ngModel)]="data.fantasyName" class="form-control" />
     </div>
   </div>
   <div>
     <div class="from-group">
       <label>Data de Constituição: </label>
-      <input type="date" name="data-contituição" [(ngModel)]="data.DateOfIncorporation" class="form-control" />
+      <input type="date" name="data-contituição" [(ngModel)]="data.dateOfIncorporation" class="form-control" />
     </div>
     <div class="from-group">
       <label>Porte: </label>
-      <input type="text" name="porte" value="" [(ngModel)]="data.Size" class="form-control" />
+      <input type="text" name="porte" value="" [(ngModel)]="data.size" class="form-control" />
     </div>
     <div class="from-group">
       <label>Fone 1</label>
@@ -72,21 +72,21 @@
   <div>
     <div class="from-group">
       <label>Website: </label>
-      <input type="text" name="website" value="" [(ngModel)]="data.WebSite" class="form-control" />
+      <input type="text" name="website" value="" [(ngModel)]="data.webSite" class="form-control" />
     </div>    
   </div>
   <div>    
     <div class="from-group">
       <label>Quantidade de Quota: </label>
-      <input type="text" name="quantidade-quota" value="" [(ngModel)]="data.ShareQuantity" class="form-control" />
+      <input type="text" name="quantidade-quota" value="" [(ngModel)]="data.shareQuantity" class="form-control" />
     </div>
     <div class="from-group">
       <label>Valor quota: </label>
-      <input type="number" name="valor-quota" value="" [(ngModel)]="data.ValueShare" class="form-control" />
+      <input type="number" name="valor-quota" value="" [(ngModel)]="data.valueShare" class="form-control" />
     </div>
     <div class="from-group">
       <label>Capital Social: </label>
-      <input type="number" name="capital-social" value="" [(ngModel)]="data.SocialCapital" class="form-control" />
+      <input type="number" name="capital-social" value="" [(ngModel)]="data.socialCapital" class="form-control" />
     </div>
   </div>
 </fieldset>

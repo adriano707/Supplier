@@ -5,7 +5,8 @@
       <th>Tipo de Pessoa</th>
       <th>Nacional(C)</th>
       <th>CPF/CNPJ/Inscrição</th>
-      <th>Nome/Razão Social</th>          
+      <th>Nome/Razão Social</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -15,6 +16,7 @@
       <td>{{ supplier.isNational }}</td>
       <td>{{ supplier.document }}</td>
       <td>{{ supplier.name }}</td>
+      <td><a [routerLink]="['/natural-person', supplier.id]">Ver</a></td>
     </tr>
   </tbody>
 </table>

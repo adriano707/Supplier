@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -11,13 +11,13 @@ export class NaturalPersonComponent implements OnInit {
   public data: INaturalPerson;
   id: string;
 
-  constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string, private route: ActivatedRoute) {
+  constructor(private http: HttpClient, private route: ActivatedRoute) {
     
   }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
-    this.http.get<INaturalPerson>(this.baseUrl + 'natural-persons/' + this.id).subscribe(result => {
+    this.http.get<INaturalPerson>('https://localhost:5002/persons/natural-persons/' + this.id).subscribe(result => {
       this.data = result;
     }, error => console.error(error));
   }
